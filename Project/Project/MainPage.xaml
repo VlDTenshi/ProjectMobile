@@ -3,22 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Project.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <StackLayout BackgroundColor="Bisque">
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <Label Text="Ilmteadus" HorizontalOptions="Center" Margin="0,50,0,15" FontSize="30" TextColor="#091c33" FontAttributes="Bold"/>
+            <Image Margin="0,0,0,60" Source="https://www.noaa.gov/sites/default/files/styles/square_width_650/public/2021-02/FocusArea__Weather-02.jpg"/>
+        </StackLayout>
+        <RelativeLayout>
+            <Frame RelativeLayout.YConstraint="-40" BackgroundColor="#fcfcfc" Margin="80,0" Padding="15" CornerRadius="15">
+                <StackLayout>
+                    <Entry x:Name="anyInput" WidthRequest="200" Placeholder="Sisestage linn"/>
+                    <Button x:Name="getData" Clicked="getData_Clicked"  Text="Saada" BackgroundColor="#e6b035" TextColor="#8f6b18" FontAttributes="Bold"/>
+                </StackLayout>
+            </Frame>
+        </RelativeLayout>
+        <Label x:Name="viewResult" Text="" FontSize="25" HorizontalOptions="Center" TextColor="#333" Margin="0,0,0,50"/>
     </StackLayout>
 
 </ContentPage>
