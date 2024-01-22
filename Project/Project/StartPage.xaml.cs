@@ -29,7 +29,7 @@ namespace Project
                     Text = tekst[i],
                     TabIndex = i,
                     BackgroundColor = Color.Bisque,
-                    TextColor = Color.White,
+                    TextColor = Color.Black,
                     FontFamily = "MyFont.ttf"
                 };
                 st.Children.Add(button);
