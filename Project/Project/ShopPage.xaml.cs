@@ -16,6 +16,7 @@ namespace Project
 		{
 			InitializeComponent ();
             ToolbarItems.Add(new ToolbarItem("Back", null, async () => await Navigation.PopAsync()));
+            
         }
         protected override void OnAppearing()
         {
@@ -28,6 +29,16 @@ namespace Project
         private async void AddItemButton(object sender, EventArgs e)
         {
 			await Navigation.PushAsync(new ShopItemAdd());
+        }
+
+        private void OnItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
+            {
+                Item selectedItem = (Item)e.CurrentSelection.FirstOrDefault();
+                Navigation.PushAsync(new ItemDetailPage(selectedItem));
+                ((CollectionView)sender).SelectedItem = null; // Сбросить выбор после обработки
+            }
         }
     }
 }

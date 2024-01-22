@@ -22,5 +22,9 @@ namespace Project
         {
             return conn.Insert(item);
         }
+        public int DeleteItem(Item item)
+        {
+            return conn.Delete(item);
+        }
     }
 }

@@ -5,7 +5,9 @@
     <ContentPage.Content>
         <StackLayout Margin="15">
             <Button Text="Add item" Clicked="AddItemButton"/>
-            <CollectionView x:Name="itemsCollection">
+            <CollectionView x:Name="itemsCollection"
+                            SelectionChanged="OnItemSelected"
+                            SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout BackgroundColor="#51b8b8" Padding="15">
